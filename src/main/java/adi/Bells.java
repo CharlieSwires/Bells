@@ -1,3 +1,4 @@
+package main.java.adi;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,9 +9,16 @@ public class Bells {
 
     private int bells[] = null;
     private Set<Integer> bellSet = null;
+    private Set<Integer> comparisonSet = null;
 
     public Bells(int[] bells) {
         this.bells = bells;
+        bellSet = new HashSet<Integer>();
+        for (Integer bell : bells) {
+            assert(bell >= 0);
+            this.bellSet.add(bell);
+        }
+        
     }
 
     @Override
@@ -36,14 +44,15 @@ public class Bells {
     }
 
     public boolean isUnique() {
-        bellSet = new HashSet<Integer>();
-        for (Integer bell : bells) {
-            this.bellSet.add(bell);
-        }
         return this.bellSet.size() == bells.length;
     }
 
     public boolean positionCompare(Bells bells2) {
+        comparisonSet = new HashSet<Integer>();
+        for (Integer bell : bells2.getBells()) {
+            this.comparisonSet.add(bell);
+        }
+        if (!comparisonSet.equals(this.bellSet)) return false;
         Map<Integer, Integer> positionMap = new HashMap<Integer, Integer>();
         for (int i = 0; i < bells.length; i++) {
             positionMap.put(bells[i], i);

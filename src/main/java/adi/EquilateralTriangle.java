@@ -1,3 +1,4 @@
+package main.java.adi;
 
 public class EquilateralTriangle extends Shape {
 
