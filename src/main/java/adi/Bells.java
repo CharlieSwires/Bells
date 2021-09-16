@@ -100,6 +100,6 @@ public class Bells {
 
     @Override
     public String toString() {
-        return "Bells [bells=" + Arrays.toString(bells) + "]";
+        return "Bells [bells=" + Arrays.toString(bells) + "]\n";
     }
 }
