@@ -75,4 +75,31 @@ public class Bells {
     public void setBells(int[] bells) {
         this.bells = bells;
     }
+    
+    public int[] swap(int index) {
+        assert(index < this.bells.length && index >= 0);
+        int copy[] = new int[this.bells.length];
+        int t = 0;
+        for(int i:this.bells) {
+            copy[t++] = i;
+        }
+        int a = copy[index];
+        int index2 = index;
+        if (++index2 >= copy.length) {
+            index2 = 0;
+        }
+        int b = copy[index2];
+        int c = a;
+        a = b;
+        b = c;
+        copy[index] = a;
+        copy[index2] = b;
+        
+        return copy;
+    }
+
+    @Override
+    public String toString() {
+        return "Bells [bells=" + Arrays.toString(bells) + "]";
+    }
 }

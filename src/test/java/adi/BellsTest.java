@@ -88,4 +88,37 @@ class BellsTest {
         Assert.assertTrue(!br.onePosition()); //false
     }
 
+    @Test
+    void test5() {
+        List<Bells> lb = new ArrayList<Bells>();
+        int[] bells = {1,2,3,4,5,6};
+        Bells b = new Bells(bells);
+        lb.add(b);
+
+        boolean finished = false;
+        BellsRoll br = null;
+        while(!finished) {
+            for(int tries = 0; tries < 100; tries++){
+                int rnd = (int)Math.round(Math.random() * (bells.length-1));
+                int[] newpeel = b.swap(rnd);
+                lb.add(new Bells(newpeel));
+
+                br = new BellsRoll(lb);
+                if (br.isUnique() && br.onePosition() && br.oneOccurance()) {
+                    finished = false;
+                    break;
+                } else {
+                    lb.remove(lb.size()-1);
+                    finished = true;
+                    continue;
+                }
+            }
+        }
+        System.out.println(br);
+        System.out.println(lb.size());
+        Assert.assertTrue(br.isUnique());
+        Assert.assertTrue(br.onePosition());
+        Assert.assertTrue(br.oneOccurance());
+    }    
+
 }

@@ -34,4 +34,9 @@ public class BellsRoll {
         return unique.size() == list.size();
     }
 
+    @Override
+    public String toString() {
+        return "BellsRoll [list=" + list + "]";
+    }
+
 }
