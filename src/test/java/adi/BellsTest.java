@@ -91,7 +91,7 @@ class BellsTest {
     @Test
     void test5() {
         List<Bells> lb = new ArrayList<Bells>();
-        int[] initial = {1,2,3,4};
+        int[] initial = {1,2,3,4,5,6,7};
         lb.add(new Bells(initial));
         BellsRoll br = new BellsRoll(lb);
         br = br.randomRoll();
