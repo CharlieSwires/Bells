@@ -10,9 +10,11 @@ What you need
 <p> from eclipse run JUnit tests </p>
 <p> look at the console</p>
 <BR>
-<p>     @Test</p>
-<p>     void test5() {</p>
-<p>         List<Bells> lb = new ArrayList<Bells>();</p>
-<p>         int[] bells = {1,2,3,4,5,6};<------------Alter for the number of unique bells. There are 6 here.</p>
-<p>         Bells b = new Bells(bells);</p>
-<p>         lb.add(b);</p>
+<p>    @Test</p>
+<p>    void test5() {</p>
+<p>        List<Bells> lb = new ArrayList<Bells>();</p>
+<p>        int[] initial = {1,2,3,4};</p>
+<p>        lb.add(new Bells(initial));</p>
+<p>        BellsRoll br = new BellsRoll(lb);</p>
+<p>        br = br.randomRoll();</p>
+
