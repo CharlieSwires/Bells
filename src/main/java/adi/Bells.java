@@ -102,4 +102,8 @@ public class Bells {
     public String toString() {
         return "Bells [bells=" + Arrays.toString(bells) + "]\n";
     }
+
+    public int size() {
+        return bells.length;
+    }
 }
